@@ -3,7 +3,10 @@
 
 <meta HTTP-EQUIV='Content-Security-Policy' CONTENT="
 default-src 'self' cdn.jsdelivr.net fonts.gstatic.com;
-script-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.google-analytics.com '{{ $.Param "csp-script-src" }}'; 
+script-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.google-analytics.com
+{{ if (isset .Params "csp-script-src") }}
+    '{{ $.Param "csp-script-src" }}'
+{{ end }};
 style-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.w3.org fonts.googleapis.com;
 ">
 
