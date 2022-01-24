@@ -1,6 +1,12 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 
+<meta HTTP-EQUIV='Content-Security-Policy' CONTENT="
+default-src 'self' cdn.jsdelivr.net fonts.gstatic.com;
+script-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.google-analytics.com '{{ $.Param "csp-script-src" }}'; 
+style-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.w3.org fonts.googleapis.com;
+">
+
 {{- $description := partialCached "data/description" . .RelPermalink -}}
 <meta name='description' content='{{ $description }}'>
 
