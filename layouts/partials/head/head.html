@@ -3,12 +3,12 @@
 
 <meta HTTP-EQUIV='Content-Security-Policy' CONTENT="
 img-src 'self' avatars.githubusercontent.com;
-default-src 'self' cdn.jsdelivr.net fonts.gstatic.com avatars.githubusercontent.com;
-script-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.google-analytics.com
+default-src 'self' cdn.jsdelivr.net fonts.gstatic.com;
+script-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.google-analytics.com hugo-theme-stack.disqus.com
 {{ if (isset .Params "csp-script-src") }}
     '{{ $.Param "csp-script-src" }}'
 {{ end }};
-style-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.w3.org fonts.googleapis.com hugo-theme-stack.disqus.com;
+style-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.w3.org fonts.googleapis.com;
 ">
 
 {{- $description := partialCached "data/description" . .RelPermalink -}}
