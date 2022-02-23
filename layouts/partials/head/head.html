@@ -2,8 +2,10 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 <meta HTTP-EQUIV='Content-Security-Policy' CONTENT="
-img-src 'self' avatars.githubusercontent.com;
+img-src 'self' avatars.githubusercontent.com referrer.disqus.com c.disquscdn.com;
 default-src 'self' cdn.jsdelivr.net fonts.gstatic.com;
+prefetch-src 'self' c.disquscdn.com disqus.com;
+frame-src 'self' disqus.com;
 script-src 'self' 'unsafe-inline' cdn.jsdelivr.net www.google-analytics.com hugo-theme-stack.disqus.com
 {{ if (isset .Params "csp-script-src") }}
     '{{ $.Param "csp-script-src" }}'
